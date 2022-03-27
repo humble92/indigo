@@ -17,11 +17,12 @@ Indigo was specially developed to be used with `Tutor <https://docs.overhang.io>
 
 Clone the theme repository::
 
-    git clone https://github.com/overhangio/indigo
+    git clone https://github.com/humble92/indigo
+    mv indigo iTheme
 
 Render your theme::
 
-    tutor config render --extra-config ./indigo/config.yml ./indigo/theme "$(tutor config printroot)/env/build/openedx/themes/indigo"
+    tutor config render --extra-config ./iTheme/config.yml ./iTheme/theme "$(tutor config printroot)/env/build/openedx/themes/iTheme"
 
 Rebuild the Openedx docker image::
 
@@ -31,16 +32,16 @@ Restart your platform::
 
     tutor local start -d
 
-You will then have to enable the "indigo" theme, as per the `Tutor documentation <https://docs.tutor.overhang.io/local.html#setting-a-new-theme>`__::
+You will then have to enable the "iTheme" theme, as per the `Tutor documentation <https://docs.tutor.overhang.io/local.html#setting-a-new-theme>`__::
 
-    tutor local settheme indigo
+    tutor local settheme iTheme
 
 Upgrade
 -------
 
-To upgrade the Indigo theme from a previous version, simply pull the changes from the git repository::
+To upgrade the iTheme theme from a previous version, simply pull the changes from the git repository::
 
-    cd indigo/
+    cd iTheme/
     git pull
 
 Then run the commands above starting from ``tutor config render...``.
@@ -51,17 +52,17 @@ Customization
 Setting custom values
 ~~~~~~~~~~~~~~~~~~~~~
 
-A few settings in the theme can be easily customised: this includes the theme primary color, landing page tagline, footer legal links. Theme settings are defined in the `config.yml <https://github.com/overhangio/indigo/blob/master/config.yml>`__ file at the root of the repository. You can override all or part of those settings by creating you own ``config-custom.yml`` file. Then, render the theme with::
+A few settings in the theme can be easily customised: this includes the theme primary color, landing page tagline, footer legal links. Theme settings are defined in the `config.yml <https://github.com/humble92/iTheme/blob/master/config.yml>`__ file at the root of the repository. You can override all or part of those settings by creating you own ``config-custom.yml`` file. Then, render the theme with::
 
     tutor config render \
-        --extra-config ./indigo/config.yml \
-        --extra-config ./indigo/config-custom.yml \
-        ./indigo/theme "$(tutor config printroot)/env/build/openedx/themes/indigo"
+        --extra-config ./iTheme/config.yml \
+        --extra-config ./iTheme/config-custom.yml \
+        ./iTheme/theme "$(tutor config printroot)/env/build/openedx/themes/iTheme"
 
 Changing the default logo and other images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The theme images are stored in `indigo/theme/lms/static/images <https://github.com/overhangio/indigo/tree/master/theme/lms/static/images>`__ for the LMS, and in `indigo/theme/cms/static/images <https://github.com/overhangio/indigo/tree/master/theme/cms/static/images>`__ for the CMS. To use custom images in your theme, just replace the files stored in these folders with your own prior to running ``tutor config render``.
+The theme images are stored in `iTheme/theme/lms/static/images <https://github.com/humble92/iTheme/tree/master/theme/lms/static/images>`__ for the LMS, and in `iTheme/theme/cms/static/images <https://github.com/humble92/iTheme/tree/master/theme/cms/static/images>`__ for the CMS. To use custom images in your theme, just replace the files stored in these folders with your own prior to running ``tutor config render``.
 
 Overriding the default "about", "contact", etc. static pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +71,7 @@ By default, the ``/about`` and ``/contact`` pages contain a simple line of text:
 
 The static templates used by Open edX to render those pages are all stored in the `edx-platform/lms/templates/static_templates <https://github.com/edx/edx-platform/tree/open-release/maple.master/lms/templates/static_templates>`__ folder. To override those templates, you should add your own in the following folder::
 
-    ls "$(tutor config printroot)/env/build/openedx/themes/indigo/lms/templates/static_templates"
+    ls "$(tutor config printroot)/env/build/openedx/themes/iTheme/lms/templates/static_templates"
 
 For instance, edit the "donate.html" file in this directory. We can derive the content of this file from the contents of the `donate.html <https://github.com/edx/edx-platform/blob/open-release/maple.master/lms/templates/static_templates/donate.html>`__ static template in edx-platform::
 
@@ -103,4 +104,4 @@ In particular, *do not* open a GitHub issue to ask about your issues. Instead, g
 License
 -------
 
-This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/indigo/blob/master/LICENSE.txt>`_.
+This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/iTheme/blob/master/LICENSE.txt>`_.
